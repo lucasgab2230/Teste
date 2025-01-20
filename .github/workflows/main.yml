@@ -9,9 +9,9 @@ jobs:
     name: Setup Node.js environment
     runs-on: ubuntu-latest
     steps:
-    - name: Setup Node.js environment
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4.1.0
+    - name: Setup Node.js environment
       with:
         node-version: '22.x'
     - run: npm -v
