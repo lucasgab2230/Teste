@@ -1,18 +1,26 @@
+name: Setup Node.js 22 LTS
+
 on:
   push:
     branches:
-    - main
-    - release/*
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  setup_node_job:
-    name: Setup Node.js environment
+  setup-node:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4.1.0
-    - name: Setup Node.js environment
-      with:
-        node-version: '22.x'
-    - run: npm -v
- 
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 22 LTS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          check-latest: true
+
+      - name: Verify npm version
+        run: npm -v
