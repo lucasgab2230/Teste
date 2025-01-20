@@ -17,4 +17,5 @@ jobs:
         node-version-file: 'package.json'
         check-latest: false
         architecture: ''
+    - run: npm -v
  
