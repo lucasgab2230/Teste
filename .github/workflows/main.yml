@@ -14,8 +14,5 @@ jobs:
     - uses: actions/setup-node@v4.1.0
       with:
         node-version: '22.x'
-        node-version-file: 'package.json'
-        check-latest: false
-        architecture: ''
     - run: npm -v
  
